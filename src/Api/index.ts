@@ -1,4 +1,5 @@
 import PixelApi from './Api'
 import UserEvent from './UserEvent'
 
-export type { PixelApi, UserEvent }
+export type { UserEvent }
+export { PixelApi }
