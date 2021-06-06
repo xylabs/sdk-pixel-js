@@ -1,0 +1,79 @@
+{
+  "name": "@xylabs/pixel",
+  "homepage": "https://xylabs.com",
+  "bugs": {
+    "url": "https://github.com/xylabs/sdk-pixel-js/issues",
+    "email": "support@xylabs.com"
+  },
+  "description": "Event Client for xylabs ESB",
+  "author": {
+    "name": "XY Labs Development Team",
+    "url": "https://xylabs.com",
+    "email": "support@xylabs.com"
+  },
+  "license": "NONE",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xylabs/sdk-pixel-js.git"
+  },
+  "version": "1.0.0-alpha.1",
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "sideEffects": false,
+  "dependencies": {
+    "async-mutex": "^0.3.1",
+    "axios": "^0.21.1",
+    "http-status-codes": "^2.1.4",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "randombytes": "^2.1.0",
+    "tslib": "^2.2.0"
+  },
+  "scripts": {
+    "build": "rm -r -f dist && yarn deps && yarn lint && yarn compile && yarn copy-src",
+    "copy-src": "cp package.json ./dist",
+    "compile": "rollup -c rollup.config.ts",
+    "deploy": "yarn version --patch && yarn build && yarn publish ./dist --access public",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json ./src",
+    "lint-pkg": "npmPkgJsonLint .",
+    "fix": "eslint --ext .js,.jsx,.ts,.tsx,.json ./src --fix",
+    "test": "jest",
+    "clean": "rm -f *.tsbuildinfo && rm -r -f ./dist && rm -r -f ./build",
+    "reinstall": "rm -r -f ./node_modules && rm -f ./yarn.lock && rm -f ./yarn-error.log && yarn install && yarn outdated",
+    "tsprune": "yarn ts-prune",
+    "deps": "yarn depcheck"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/jest": "^26.0.23",
+    "@types/lodash": "^4.14.170",
+    "@types/md5": "^2.3.0",
+    "@types/node": "^15.12.1",
+    "@types/randombytes": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "depcheck": "^1.4.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-json": "^3.0.0",
+    "eslint-plugin-no-secrets": "^0.8.9",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.1",
+    "eslint-plugin-typescript-sort-keys": "^1.6.0",
+    "jest": "^27.0.1",
+    "npm-package-json-lint": "^5.1.0",
+    "npm-package-json-lint-config-default": "^3.0.0",
+    "prettier": "^2.2.1",
+    "rollup": "^2.50.2",
+    "ts-jest": "^27.0.1",
+    "ts-node": "^10.0.0",
+    "ts-prune": "^0.9.0",
+    "tslib": "^2.2.0",
+    "typescript": "^4.3.2",
+    "vue": "^3.0.11"
+  }
+}
