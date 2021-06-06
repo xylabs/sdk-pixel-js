@@ -12,12 +12,12 @@
     "email": "support@xylabs.com"
   },
   "license": "NONE",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/xylabs/sdk-pixel-js.git"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./index.cjs",
   "module": "./index.js",
   "types": "./index.d.ts",
