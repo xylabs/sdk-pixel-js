@@ -4,7 +4,7 @@ import UserEvent from './UserEvent'
 
 class PixelApi {
   private pixelId: string
-  private constructor(pixelId: string) {
+  public constructor(pixelId: string) {
     this.pixelId = pixelId
   }
 
