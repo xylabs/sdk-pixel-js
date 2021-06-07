@@ -47,14 +47,9 @@ class XyPixel {
 
   private static utmFields = new UtmFields()
 
-  public async track(event: string, fields?: Record<string, any>, email?: string) {
+  public async track(event: string, fields?: Record<string, any>) {
     const utm = XyPixel.utmFields.update()
     const referrer = new Referrer()
-    //if a new email is passed, update it
-    if (this.email != email) {
-      this.email = email
-      this.email_hash = email ? md5(email) : undefined
-    }
     this.queue.push({
       ...{
         cid: this.cid,
