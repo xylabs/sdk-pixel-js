@@ -1,12 +1,13 @@
-import FunnelStartedData from './FunnelStartedData'
-import UserClickData from './UserClickData'
-import ViewContentData from './ViewContentData'
+import FunnelStartedFields from './FunnelStartedFields'
+import TestStartedFields from './TestStartedFields'
+import UserClickFields from './UserClickFields'
+import ViewContentFields from './ViewContentFields'
 
 abstract class UserEventHandler<T> {
-  abstract testStarted(data: T): Promise<void>
-  abstract funnelStarted(data: T | FunnelStartedData): Promise<void>
-  abstract viewContent(data: T | ViewContentData): Promise<void>
-  abstract userClick(data: T | UserClickData): Promise<void>
+  abstract testStarted(fields: T | TestStartedFields): Promise<void>
+  abstract funnelStarted(fields: T | FunnelStartedFields): Promise<void>
+  abstract viewContent(fields: T | ViewContentFields): Promise<void>
+  abstract userClick(fields: T | UserClickFields): Promise<void>
 }
 
 export default UserEventHandler
