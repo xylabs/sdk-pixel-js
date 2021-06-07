@@ -6,7 +6,7 @@ import Referrer from './Referrer'
 import UniqueUserId from './UniqueUserId'
 import UtmFields from './UtmFields'
 
-class CoinPixel {
+class XyPixel {
   public pixelId?: string
   private api?: PixelApi
   public email?: string
@@ -21,10 +21,10 @@ class CoinPixel {
     this.email = email
   }
 
-  public static instance: CoinPixel
+  public static instance: XyPixel
   public static init(pixelId: string, api?: PixelApi, email?: string) {
     if (!this.instance) {
-      this.instance = new CoinPixel(pixelId, api, email)
+      this.instance = new XyPixel(pixelId, api, email)
     } else {
       //we update this in the case of the api changing
       this.instance.api = api
@@ -58,7 +58,7 @@ class CoinPixel {
   private static utmFields = new UtmFields()
 
   public async track(event: string, fields?: Record<string, any>, email?: string) {
-    const utm = CoinPixel.utmFields.update()
+    const utm = XyPixel.utmFields.update()
     const referrer = new Referrer()
     //if a new email is passed, update it
     if (this.email != email) {
@@ -82,4 +82,4 @@ class CoinPixel {
   }
 }
 
-export default CoinPixel
+export default XyPixel
