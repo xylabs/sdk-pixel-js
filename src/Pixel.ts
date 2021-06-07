@@ -15,24 +15,14 @@ class XyPixel {
   public cid = new UniqueUserId().id
   private queueMutex = new Mutex()
 
-  private constructor(pixelId: string, api?: PixelApi, email?: string) {
+  public constructor(pixelId: string, api?: PixelApi) {
     this.api = api
     this.pixelId = pixelId
-    this.email = email
   }
 
-  public static instance: XyPixel
-  public static init(pixelId: string, api?: PixelApi, email?: string) {
-    if (!this.instance) {
-      this.instance = new XyPixel(pixelId, api, email)
-    } else {
-      //we update this in the case of the api changing
-      this.instance.api = api
-      this.instance.email = email
-      this.instance.email_hash = email ? md5(email) : undefined
-    }
-    this.instance.tryFlushQueue()
-    return this.instance
+  public identify(email?: string) {
+    this.email = email
+    this.email_hash = email ? md5(email) : undefined
   }
 
   private async tryFlushQueue() {
