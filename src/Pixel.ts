@@ -1,3 +1,4 @@
+import { assertEx } from '@xyo-network/sdk-xyo-js'
 import { Mutex } from 'async-mutex'
 import md5 from 'md5'
 
@@ -8,15 +9,13 @@ import UtmFields from './UtmFields'
 
 class XyPixel {
   public pixelId?: string
-  private api?: PixelApi
   public email?: string
   public email_hash?: string | null
   public queue: UserEvent[] = []
   public cid = new UniqueUserId().id
   private queueMutex = new Mutex()
 
-  public constructor(pixelId: string, api?: PixelApi) {
-    this.api = api
+  private constructor(pixelId: string) {
     this.pixelId = pixelId
   }
 
@@ -28,7 +27,7 @@ class XyPixel {
   private async tryFlushQueue() {
     await this.queueMutex.runExclusive(async () => {
       if (this.queue.length === 0) return
-      const api = this.api
+      const api = XyPixel.api
       if (api) {
         const events = this.queue
         this.queue = []
@@ -47,7 +46,7 @@ class XyPixel {
 
   private static utmFields = new UtmFields()
 
-  public async track(event: string, fields?: Record<string, any>) {
+  public async send(event: string, fields?: Record<string, any>) {
     const utm = XyPixel.utmFields.update()
     const referrer = new Referrer()
     this.queue.push({
@@ -64,6 +63,20 @@ class XyPixel {
       },
     })
     await this.tryFlushQueue()
+  }
+
+  private static _instance?: XyPixel
+  public static get instance(): XyPixel {
+    return assertEx(this._instance, 'XyPixel uninitialized')
+  }
+
+  public static init(pixelId: string) {
+    this._instance = new XyPixel(pixelId)
+  }
+
+  private static api = new PixelApi()
+  public static selectApi(api: PixelApi) {
+    this.api = api
   }
 }
 
