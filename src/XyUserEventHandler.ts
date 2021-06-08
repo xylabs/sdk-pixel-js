@@ -6,7 +6,7 @@ import UserEventHandler from './UserEventHandler'
 import ViewContentFields from './ViewContentFields'
 
 class XyUserEventHandler<T> extends UserEventHandler<T> {
-  private pixel: XyPixel
+  public pixel: XyPixel
   constructor(pixel: XyPixel) {
     super()
     this.pixel = pixel

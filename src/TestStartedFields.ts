@@ -1,4 +1,6 @@
-interface TestStartedFields {
+import CommonFields from './CommonFields'
+
+interface TestStartedFields extends CommonFields {
   name: string
 }
 
