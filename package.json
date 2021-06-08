@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/xylabs/sdk-pixel-js.git"
   },
-  "version": "1.0.12",
+  "version": "1.0.13",
   "main": "./index.cjs",
   "module": "./index.js",
   "types": "./index.d.ts",
