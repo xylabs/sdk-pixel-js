@@ -6,22 +6,20 @@ import UserEventHandler from './UserEventHandler'
 import ViewContentFields from './ViewContentFields'
 
 class XyUserEventHandler<T> extends UserEventHandler<T> {
-  public pixel: XyPixel
-  constructor(pixel: XyPixel) {
+  constructor() {
     super()
-    this.pixel = pixel
   }
   public async testStarted(fields: T | TestStartedFields) {
-    return await this.pixel.track('TestStarted', fields)
+    return await XyPixel.instance.send('TestStarted', fields)
   }
   public async funnelStarted(fields: T | FunnelStartedFields) {
-    return await this.pixel.track('FunnelStarted', fields)
+    return await XyPixel.instance.send('FunnelStarted', fields)
   }
   public async viewContent(fields: T | ViewContentFields) {
-    return await this.pixel.track('ViewContent', fields)
+    return await XyPixel.instance.send('ViewContent', fields)
   }
   public async userClick(fields: T | UserClickFields) {
-    return await this.pixel.track('ViewPage', fields)
+    return await XyPixel.instance.send('ViewPage', fields)
   }
 }
 
