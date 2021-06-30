@@ -46,7 +46,7 @@ class XyPixel {
 
   private static utmFields = new UtmFields()
 
-  public async send(event: string, fields?: Record<string, any>) {
+  public async send<T extends Record<string, unknown>>(event: string, fields?: T) {
     const utm = XyPixel.utmFields.update()
     const referrer = new Referrer()
     this.queue.push({
@@ -72,6 +72,7 @@ class XyPixel {
 
   public static init(pixelId: string) {
     this._instance = new XyPixel(pixelId)
+    return this._instance
   }
 
   private static api = new PixelApi()

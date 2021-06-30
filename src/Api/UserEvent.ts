@@ -4,7 +4,7 @@ interface UserEvent {
   email?: string
   email_hash?: string
   event?: string
-  fields?: Record<string, any>
+  fields?: Record<string, unknown>
   host?: string
   pixel?: string
   receive_time?: number
