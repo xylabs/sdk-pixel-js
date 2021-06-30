@@ -5,7 +5,7 @@ import UserClickFields from './UserClickFields'
 import UserEventHandler from './UserEventHandler'
 import ViewContentFields from './ViewContentFields'
 
-class XyUserEventHandler<T> extends UserEventHandler<T> {
+class XyUserEventHandler<T extends Record<string, unknown>> extends UserEventHandler<T> {
   constructor() {
     super()
   }
