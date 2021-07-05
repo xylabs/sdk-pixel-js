@@ -61,7 +61,7 @@
     "@types/jest": "^26.0.23",
     "@types/lodash": "^4.14.170",
     "@types/md5": "^2.3.0",
-    "@types/node": "^15.12.1",
+    "@types/node": "^16.0.0",
     "@types/randombytes": "^2.0.0",
     "@xylabs/eslint-config": "^2.0.3",
     "depcheck": "^1.4.0",
