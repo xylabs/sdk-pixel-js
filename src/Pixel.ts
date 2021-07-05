@@ -44,10 +44,16 @@ class XyPixel {
     })
   }
 
-  private static utmFields = new UtmFields()
+  private static utmFieldsObj: UtmFields
+  private static utmFields = () => {
+    if (XyPixel.utmFieldsObj === undefined) {
+      XyPixel.utmFieldsObj = new UtmFields()
+    }
+    return XyPixel.utmFieldsObj
+  }
 
   public async send<T extends Record<string, unknown>>(event: string, fields?: T) {
-    const utm = XyPixel.utmFields.update()
+    const utm = XyPixel.utmFields().update()
     const referrer = new Referrer()
     this.queue.push({
       ...{
