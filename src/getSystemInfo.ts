@@ -57,31 +57,41 @@ const versionSources = [
   'webOS',
 ]
 
+const isSources = ['bot', 'console', 'desktopMode', 'mobileBot', 'tv', 'watch', 'webKit']
+
 const getVersions = () => {
   const versions: Record<string, string> = {}
+  let returnable = false
   md = md || new MobileDetect(window.navigator.userAgent)
   versionSources.forEach((versionSource) => {
     const version = md?.versionStr(versionSource)
     if (version) {
-      versions[version.replace(' ', '_')] = version
+      versions[versionSource.replace(' ', '_')] = version
+      returnable = true
     }
   })
-  return versions
+  return returnable ? versions : undefined
+}
+
+const getIs = () => {
+  const is: Record<string, boolean> = {}
+  let returnable = false
+  md = md || new MobileDetect(window.navigator.userAgent)
+  isSources.forEach((isSource) => {
+    const isResult = md?.is(isSource)
+    if (isResult) {
+      is[isSource] = isResult
+      returnable = true
+    }
+  })
+  return returnable ? is : undefined
 }
 
 const getSystemInfo = () => {
   try {
     md = md || new MobileDetect(window.navigator.userAgent)
     systemInfo = systemInfo || {
-      is: {
-        bot: md.is('bot'),
-        console: md.is('console'),
-        desktopMode: md.is('desktopMode'),
-        mobileBot: md.is('mobileBot'),
-        tv: md.is('tv'),
-        watch: md.is('watch'),
-        webKit: md.is('webKit'),
-      },
+      is: getIs(),
       mobile: md.mobile() ?? undefined,
       os: md.os(),
       phone: md.phone() ?? undefined,
