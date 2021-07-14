@@ -96,6 +96,7 @@ const getSystemInfo = () => {
       os: md.os(),
       phone: md.phone() ?? undefined,
       tablet: md.tablet() ?? undefined,
+      userAgent: window.navigator.userAgent,
       userAgents: md.userAgents(),
       versions: getVersions(),
     }
