@@ -3,6 +3,7 @@ import { Mutex } from 'async-mutex'
 import md5 from 'md5'
 
 import { PixelApi, UserEvent } from './Api'
+import getSystemInfo from './getSystemInfo'
 import Referrer from './Referrer'
 import UniqueUserId from './UniqueUserId'
 import UtmFields from './UtmFields'
@@ -65,6 +66,7 @@ class XyPixel {
         host: document.location.host,
         pixel: this.pixelId,
         referrer: referrer.toJson(),
+        system: getSystemInfo(),
         utm,
       },
     })

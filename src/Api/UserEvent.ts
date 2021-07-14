@@ -1,3 +1,5 @@
+import UserEventSystem from './UserEventSystem'
+
 interface UserEvent {
   cid: string
   create_time?: number
@@ -11,6 +13,7 @@ interface UserEvent {
   rid?: string
   uid?: string
   utm?: Record<string, string>[] | Record<string, string[]>
+  system?: UserEventSystem
 }
 
 export default UserEvent
