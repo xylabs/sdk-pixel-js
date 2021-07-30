@@ -1,8 +1,10 @@
 import { assertEx } from '@xyo-network/sdk-xyo-js'
 import { Mutex } from 'async-mutex'
+import Cookies from 'js-cookie'
 import md5 from 'md5'
 
 import { PixelApi, UserEvent } from './Api'
+import ExIds from './ExIds'
 import getSystemInfo from './getSystemInfo'
 import Referrer from './Referrer'
 import UniqueUserId from './UniqueUserId'
@@ -14,6 +16,7 @@ class XyPixel {
   public email_hash?: string | null
   public queue: UserEvent[] = []
   public cid = new UniqueUserId().id
+  public exids?: ExIds
   private queueMutex = new Mutex()
 
   private constructor(pixelId: string) {
@@ -23,6 +26,20 @@ class XyPixel {
   public identify(email?: string) {
     this.email = email
     this.email_hash = email ? md5(email) : undefined
+  }
+
+  private updateFbId() {
+    this.exids = {
+      ...{
+        fbc: Cookies.get('_fbc'),
+        fbp: Cookies.get('_fbp'),
+        ga: Cookies.get('_ga'),
+        gclid: Cookies.get('_gclid'),
+        rdt_uid: Cookies.get('rdt_uid'),
+        scid: Cookies.get('_scid'),
+        tt_sessionId: sessionStorage.getItem('tt_sessionId') ?? undefined,
+      },
+    }
   }
 
   private async tryFlushQueue() {
@@ -54,6 +71,7 @@ class XyPixel {
   }
 
   public async send<T extends Record<string, unknown>>(event: string, fields?: T) {
+    this.updateFbId()
     const utm = XyPixel.utmFields().update()
     const referrer = new Referrer()
     this.queue.push({
@@ -62,6 +80,7 @@ class XyPixel {
         create_time: Date.now(),
         email_hash: this.email_hash ?? undefined,
         event,
+        exids: this.exids,
         fields,
         host: document.location.host,
         pixel: this.pixelId,

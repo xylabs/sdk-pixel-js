@@ -1,4 +1,3 @@
-import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 
 export default [
@@ -8,6 +7,7 @@ export default [
       'bowser',
       'tslib',
       'async-mutex',
+      'js-cookie',
       'md5',
       'randombytes',
       'lodash/isEqual',
@@ -19,13 +19,9 @@ export default [
         exports: 'auto',
         file: 'dist/index.cjs',
         format: 'cjs',
-      },
-      {
-        exports: 'auto',
-        file: 'dist/index.js',
-        format: 'es',
+        sourcemap: true,
       },
     ],
-    plugins: [typescript({ tsconfig: './tsconfig.json' }), commonjs()],
+    plugins: [typescript({ tsconfig: './tsconfig.cjs.json' })],
   },
 ]
