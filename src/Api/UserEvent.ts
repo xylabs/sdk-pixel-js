@@ -8,6 +8,7 @@ interface UserEvent {
   event?: string
   fields?: Record<string, unknown>
   host?: string
+  pathname?: string
   pixel?: string
   receive_time?: number
   rid?: string
