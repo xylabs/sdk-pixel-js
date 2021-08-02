@@ -83,6 +83,7 @@ class XyPixel {
         exids: this.exids,
         fields,
         host: document.location.host,
+        pathname: document.location.pathname,
         pixel: this.pixelId,
         referrer: referrer.toJson(),
         system: getSystemInfo(),
