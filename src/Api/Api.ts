@@ -3,7 +3,7 @@ import axios from 'axios'
 import UserEvent from './UserEvent'
 
 const apiBaseUri: Record<string, string> = {
-  beta: 'https://beta.api.coinapp.co',
+  beta: 'https://beta-api.coinapp.co',
   local: 'http://localhost:3030/dev',
   prod: 'https://api.coinapp.co',
 }
