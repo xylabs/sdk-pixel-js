@@ -985,11 +985,11 @@
     typescript "^4.3.4"
 
 "@xyo-network/sdk-xyo-js@^2.1.36":
-  version "2.1.36"
-  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-xyo-js/-/sdk-xyo-js-2.1.36.tgz#26e852177a0abbe440f60d789b933e7ca5ae8370"
-  integrity sha512-mxIMf4ATgn1My2/M9wWDSVRb2zV1LBzZP/Gd3PO7U08262tkKSqYZ1U0XpeqDeCCF/t/XxnMQlY9dqx+ZEd/EA==
+  version "2.1.48"
+  resolved "https://registry.yarnpkg.com/@xyo-network/sdk-xyo-js/-/sdk-xyo-js-2.1.48.tgz#4e5a3be1497f93eabe3c64b62eb39cb584af98f2"
+  integrity sha512-H+Woqpaguj9tbVTduDxeuiN0OQAOXeKWAwjbu7f8axtzTEZx/hwM0ql1NomgYkYo+emqnqaIvPqkNi8/aDoong==
   dependencies:
-    axios "^0.21.1"
+    axios "^0"
     rollbar "^2.24.0"
 
 abab@^2.0.3, abab@^2.0.5:
@@ -1273,6 +1273,13 @@ aws4@^1.8.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
+
+axios@^0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
+  integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+  dependencies:
+    follow-redirects "^1.14.4"
 
 axios@^0.21.1:
   version "0.21.1"
@@ -2572,6 +2579,11 @@ follow-redirects@^1.10.0:
   version "1.14.2"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.2.tgz#cecb825047c00f5e66b142f90fed4f515dec789b"
   integrity sha512-yLR6WaE2lbF0x4K2qE2p9PEXKLDjUjnR/xmjS3wHAYxtlsI9MLLBJUZirAHKzUZDGLxje7w/cXR49WOUo4rbsA==
+
+follow-redirects@^1.14.4:
+  version "1.14.5"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.5.tgz#f09a5848981d3c772b5392309778523f8d85c381"
+  integrity sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==
 
 forever-agent@~0.6.1:
   version "0.6.1"
