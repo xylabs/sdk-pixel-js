@@ -17,8 +17,8 @@
     "type": "git",
     "url": "https://github.com/xylabs/sdk-pixel-js.git"
   },
-  "version": "1.0.26",
-  "main": "dist/index.cjs",
+  "version": "1.1.0",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
@@ -26,50 +26,44 @@
     "access": "public"
   },
   "dependencies": {
-    "@xyo-network/sdk-xyo-js": "^2.1.36",
-    "async-mutex": "^0.3.1",
-    "axios": "^0.21.1",
+    "async-mutex": "^0.3.2",
     "bowser": "^2.11.0",
-    "js-cookie": "^3.0.0",
+    "js-cookie": "^3.0.1",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
-    "randombytes": "^2.1.0",
-    "tslib": "^2.3.1"
+    "randombytes": "^2.1.0"
+  },
+  "peerDependencies": {
+    "@xyo-network/sdk-xyo-js": "^2",
+    "axios": "^0",
+    "rollbar": "^2"
   },
   "scripts": {
     "build": "rm -r -f dist && yarn deps && yarn lint && yarn lint-pkg && yarn compile",
-    "compile": "tsc -p tsconfig.build.json && rollup -c rollup.config.ts",
+    "compile": "tsc -p tsconfig.build.json",
     "deploy": "yarn version --patch && yarn build && yarn publish",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.json ./src",
     "lint-pkg": "npmPkgJsonLint .",
-    "fix": "eslint --ext .js,.jsx,.ts,.tsx,.json ./src --fix",
-    "test": "jest",
-    "clean": "rm -f *.tsbuildinfo && rm -r -f ./dist && rm -r -f ./build",
-    "reinstall": "rm -r -f ./node_modules && rm -f ./yarn.lock && rm -f ./yarn-error.log && yarn install && yarn outdated",
-    "tsprune": "yarn ts-prune",
-    "up": "yarn ncu",
-    "updo": "yarn upgrade && yarn ncu -u && yarn install",
-    "deps": "yarn depcheck"
+    "test": "jest"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.2.5",
-    "@types/jest": "^27.0.1",
-    "@types/js-cookie": "^2.2.7",
-    "@types/lodash": "^4.14.172",
+    "@types/jest": "^27.0.2",
+    "@types/js-cookie": "^3.0.0",
+    "@types/lodash": "^4.14.176",
     "@types/md5": "^2.3.1",
     "@types/node": "^16",
     "@types/randombytes": "^2.0.0",
-    "@xylabs/eslint-config": "^2.0.16",
-    "depcheck": "^1.4.2",
-    "jest": "^27.0.6",
-    "npm-check-updates": "^11.8.3",
-    "npm-package-json-lint": "^5.2.3",
+    "@xylabs/eslint-config": "^2.0.31",
+    "@xylabs/ts-scripts": "1.0.16",
+    "@xyo-network/sdk-xyo-js": "^2.2.1",
+    "axios": "^0.24.0",
+    "eslint": "^7",
+    "jest": "^27.3.1",
+    "npm-package-json-lint": "^5.4.1",
     "npm-package-json-lint-config-default": "^3.0.0",
-    "rollup": "^2.56.2",
-    "ts-jest": "^27.0.5",
-    "ts-node": "^10.2.1",
-    "ts-prune": "^0.9.2",
-    "tslib": "^2.3.1",
-    "typescript": "^4.3.5"
+    "prettier": "^2.4.1",
+    "rollbar": "^2",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
   }
 }
