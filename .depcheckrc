@@ -3,5 +3,6 @@ ignores: [
   "@types/jest",
   "npm-package-json-lint-config-default",
   "ts-node",
+  "ts-jest",
   "vue"
 ]
