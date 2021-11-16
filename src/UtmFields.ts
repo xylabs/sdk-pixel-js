@@ -22,7 +22,7 @@ class UtmFields {
     const record: Record<string, string> = {}
     const parsedQueryString = document.location.search.split('?')[1]?.split('&') ?? []
     parsedQueryString.map((item) => {
-      const [fullKey, value] = item?.split('=')
+      const [fullKey, value] = item.split('=')
       const [keyCategory, keyName] = fullKey.split('_')
       if (keyCategory === 'utm') {
         record[keyName] = value
