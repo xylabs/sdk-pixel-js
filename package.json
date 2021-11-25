@@ -55,7 +55,7 @@
     "@types/randombytes": "^2.0.0",
     "@xylabs/eslint-config": "^2.0.33",
     "@xylabs/sdk-js": "^2.3.4",
-    "@xylabs/ts-scripts": "1.0.17",
+    "@xylabs/ts-scripts": "1.0.21",
     "axios": "^0.24.0",
     "eslint": "^8",
     "jest": "^27.3.1",
