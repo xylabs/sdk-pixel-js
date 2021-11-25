@@ -1,30 +1,12 @@
 {
-  "name": "@xylabs/pixel",
-  "homepage": "https://xylabs.com",
-  "bugs": {
-    "url": "https://github.com/xylabs/sdk-pixel-js/issues",
-    "email": "support@xylabs.com"
-  },
-  "description": "Event Client for xylabs ESB",
   "author": {
+    "email": "support@xylabs.com",
     "name": "XY Labs Development Team",
-    "url": "https://xylabs.com",
-    "email": "support@xylabs.com"
+    "url": "https://xylabs.com"
   },
-  "license": "LGPL-3.0",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xylabs/sdk-pixel-js.git"
-  },
-  "version": "1.1.5",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
-  "type": "module",
-  "publishConfig": {
-    "access": "public"
+  "bugs": {
+    "email": "support@xylabs.com",
+    "url": "https://github.com/xylabs/sdk-pixel-js/issues"
   },
   "dependencies": {
     "async-mutex": "^0.3.2",
@@ -34,37 +16,54 @@
     "md5": "^2.3.0",
     "randombytes": "^2.1.0"
   },
-  "peerDependencies": {
-    "@xylabs/sdk-js": "^2",
-    "axios": "^0",
-    "rollbar": "^2"
-  },
-  "scripts": {
-    "build": "rm -r -f dist && yarn deps && yarn lint && yarn lint-pkg && yarn compile",
-    "compile": "tsc -p tsconfig.build.json",
-    "deploy": "yarn version --patch && yarn build && yarn publish",
-    "lint-pkg": "npmPkgJsonLint .",
-    "test": "jest"
-  },
+  "description": "Event Client for xylabs ESB",
   "devDependencies": {
-    "@types/jest": "^27.0.2",
+    "@types/bn.js": "^5.1.0",
+    "@types/jest": "^27.0.3",
     "@types/js-cookie": "^3.0.1",
     "@types/lodash": "^4.14.177",
     "@types/md5": "^2.3.1",
     "@types/node": "^16",
     "@types/randombytes": "^2.0.0",
-    "@xylabs/eslint-config": "^2.0.33",
-    "@xylabs/sdk-js": "^2.3.4",
-    "@xylabs/ts-scripts": "1.0.17",
+    "@xylabs/eslint-config": "^2.1.4",
+    "@xylabs/sdk-js": "^2.3.9",
+    "@xylabs/ts-scripts": "1.0.23",
     "axios": "^0.24.0",
+    "bn.js": "^5.2.0",
     "eslint": "^8",
     "jest": "^27.3.1",
     "npm-package-json-lint": "^5.4.2",
     "npm-package-json-lint-config-default": "^3.0.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.0",
     "rollbar": "^2",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
-  }
+    "typescript": "^4.5.2"
+  },
+  "homepage": "https://xylabs.com",
+  "license": "LGPL-3.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "name": "@xylabs/pixel",
+  "peerDependencies": {
+    "@xylabs/sdk-js": "^2",
+    "axios": "^0",
+    "rollbar": "^2"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xylabs/sdk-pixel-js.git"
+  },
+  "scripts": {
+    "lint-pkg": "npmPkgJsonLint .",
+    "test": "jest"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "version": "1.1.5"
 }
