@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "./dist"
+    "outDir": "dist"
   },
-  "exclude": ["src/**/*.spec.ts"],
-  "extends": "./tsconfig.es.json"
+  "exclude": ["dist/**/*"],
+  "extends": "./tsconfig.base.json"
 }

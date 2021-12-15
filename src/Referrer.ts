@@ -6,11 +6,11 @@ class Referrer {
     this.session = this.getFromSession() ?? document.referrer
     sessionStorage.setItem(Referrer.storageId, this.session)
     this.local = this.getFromLocal() ?? document.referrer
-    localStorage.setItem(Referrer.storageId, this.local)
+    window.localStorage.setItem(Referrer.storageId, this.local)
   }
 
   private getFromLocal() {
-    const value = localStorage.getItem(Referrer.storageId)
+    const value = window.localStorage.getItem(Referrer.storageId)
     if (value && value.length > 0) {
       return value
     }

@@ -1,5 +1,4 @@
 import FunnelStartedFields from './FunnelStartedFields'
-import XyPixel from './Pixel'
 import Referrer from './Referrer'
 import TestStartedFields from './TestStartedFields'
 import UniqueUserId from './UniqueUserId'
@@ -10,6 +9,7 @@ import ViewContentFields from './ViewContentFields'
 import XyUserEventHandler from './XyUserEventHandler'
 
 export * from './Api'
+export * from './Pixel'
 
-export { Referrer, UniqueUserId, UserEventHandler, UtmFields, XyPixel, XyUserEventHandler }
+export { Referrer, UniqueUserId, UserEventHandler, UtmFields, XyUserEventHandler }
 export type { FunnelStartedFields, TestStartedFields, UserClickFields, ViewContentFields }
