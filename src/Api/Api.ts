@@ -3,9 +3,9 @@ import axios from 'axios'
 import UserEvent from './UserEvent'
 
 const apiBaseUri: Record<string, string> = {
-  beta: 'https://beta-api.coinapp.co',
+  beta: 'https://pixel.xylabs.com',
   local: 'http://localhost:3030',
-  prod: 'https://api.coinapp.co',
+  prod: 'https://pixel.xylabs.com',
 }
 
 class PixelApi {
