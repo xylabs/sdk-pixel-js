@@ -4,7 +4,7 @@ class UtmFields {
   private static localStorageId = '_coin_utm'
   public fields: Record<string, string>[] = []
   constructor() {
-    const storedString = localStorage.getItem(UtmFields.localStorageId) ?? '[]'
+    const storedString = window.localStorage.getItem(UtmFields.localStorageId) ?? '[]'
     try {
       this.fields = JSON.parse(storedString)
     } catch {
@@ -15,7 +15,7 @@ class UtmFields {
       this.fields = []
     }
     this.update()
-    localStorage.setItem(UtmFields.localStorageId, JSON.stringify(this.fields))
+    window.localStorage.setItem(UtmFields.localStorageId, JSON.stringify(this.fields))
   }
 
   public getUtmRecord = () => {

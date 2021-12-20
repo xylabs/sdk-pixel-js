@@ -10,7 +10,7 @@ import Referrer from './Referrer'
 import UniqueUserId from './UniqueUserId'
 import UtmFields from './UtmFields'
 
-class XyPixel {
+export class XyPixel {
   public pixelId?: string
   public email?: string
   public email_hash?: string | null
@@ -103,10 +103,8 @@ class XyPixel {
     return this._instance
   }
 
-  private static api = new PixelApi()
+  public static api = new PixelApi()
   public static selectApi(api: PixelApi) {
     this.api = api
   }
 }
-
-export default XyPixel

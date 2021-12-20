@@ -1,5 +1,5 @@
 import FunnelStartedFields from './FunnelStartedFields'
-import XyPixel from './Pixel'
+import { XyPixel } from './Pixel'
 import TestStartedFields from './TestStartedFields'
 import UserClickFields from './UserClickFields'
 import UserEventHandler from './UserEventHandler'
