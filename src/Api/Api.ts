@@ -13,9 +13,7 @@ class PixelApi {
 
   /* baseUri can either be a preset (prod, beta, local), or a specific uri */
   constructor(baseUri = 'prod') {
-    console.log(`baseUri: ${baseUri}`)
     this.endPoint = apiBaseUri[baseUri] ? `${apiBaseUri[baseUri]}/t/event/queue` : baseUri
-    console.log(`EndPoint: ${this.endPoint}`)
   }
 
   public async trackEvents(events: UserEvent[]) {
