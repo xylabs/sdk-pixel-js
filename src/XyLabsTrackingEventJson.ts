@@ -14,4 +14,6 @@ export interface XyLabsTrackingEventJson {
   uid?: string
   utm?: Record<string, string>[] | Record<string, string[]>
   system?: unknown
+  ip?: string
+  ua?: string
 }
