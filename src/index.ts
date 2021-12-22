@@ -10,6 +10,7 @@ import XyUserEventHandler from './XyUserEventHandler'
 
 export * from './Api'
 export * from './Pixel'
+export * from './XyLabsTrackingEventJson'
 
 export { Referrer, UniqueUserId, UserEventHandler, UtmFields, XyUserEventHandler }
 export type { FunnelStartedFields, TestStartedFields, UserClickFields, ViewContentFields }
