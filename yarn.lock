@@ -1059,9 +1059,9 @@
     remark-preset-lint-markdown-style-guide "^5.1.2"
 
 "@xylabs/sdk-js@^2.3.19":
-  version "2.3.19"
-  resolved "https://registry.yarnpkg.com/@xylabs/sdk-js/-/sdk-js-2.3.19.tgz#f16eff795d4b661beeacad536d7bd3cd39c24e31"
-  integrity sha512-K9fn57XZmcj6NnPXS8LhHyNXvCAJ6bDXXD5ABU+798mCyswR2Ouec8gWPUC53539Lz4GzlJUrfPlUPmLWWtwbg==
+  version "2.3.25"
+  resolved "https://registry.yarnpkg.com/@xylabs/sdk-js/-/sdk-js-2.3.25.tgz#c00f43ed5db74fa1e8a32ca634975dbccc76f3d6"
+  integrity sha512-hM/Y5c4gF9oZmo+UymEq5b0AO5Tqc+foptftTV7vQlm5mM5Ufm/dYAVrkyu7V3d+bd7lj0K49QQykkOENPIG4Q==
 
 "@xylabs/ts-scripts@1.0.24":
   version "1.0.24"
