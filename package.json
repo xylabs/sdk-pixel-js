@@ -51,12 +51,12 @@
   "esm5": "dist/esm5/index.js",
   "exports": {
     ".": {
-      "default": "./dist/index.js",
       "esm5": "./dist/esm5/index.js",
       "node": {
         "import": "./dist/node-esm/index.js",
         "require": "./dist/node/index.js"
-      }
+      },
+      "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
@@ -86,7 +86,6 @@
     "test": "jest"
   },
   "sideEffects": false,
-  "type": "module",
   "typings": "dist/index.d.ts",
   "version": "1.2.5"
 }
