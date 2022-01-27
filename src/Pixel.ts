@@ -10,6 +10,8 @@ import Referrer from './Referrer'
 import UniqueUserId from './UniqueUserId'
 import UtmFields from './UtmFields'
 
+const emailHashLocalStorageName = 'xy_email_hash'
+
 export class XyPixel {
   public pixelId?: string
   public email?: string
@@ -21,11 +23,15 @@ export class XyPixel {
 
   private constructor(pixelId: string) {
     this.pixelId = pixelId
+    this.email_hash = localStorage.getItem(emailHashLocalStorageName)
   }
 
   public identify(email?: string) {
     this.email = email
     this.email_hash = email ? md5(email) : undefined
+    if (this.email_hash) {
+      localStorage.setItem(emailHashLocalStorageName, this.email_hash)
+    }
   }
 
   private updateFbId() {
@@ -90,6 +96,7 @@ export class XyPixel {
         utm,
       },
     })
+    console.log(`Queue: ${JSON.stringify(this.queue, null, 2)}`)
     await this.tryFlushQueue()
   }
 
