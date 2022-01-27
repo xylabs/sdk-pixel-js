@@ -1,9 +1,9 @@
-name: Build (develop)
+name: Build (beta)
 
 on:
   push:
     branches:
-      - develop
+      - beta
 
 jobs:
   build_ubuntu:
