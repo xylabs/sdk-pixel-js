@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist"
+    "outDir": "./dist"
   },
-  "exclude": ["dist/**/*"],
-  "extends": "@xylabs/tsconfig"
+  "exclude": ["src/**/*.spec.ts"],
+  "extends": "@xylabs/tsconfig",
+  "include": ["src"]
 }
