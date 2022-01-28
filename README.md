@@ -2,6 +2,8 @@
 
 # sdk-pixel-js
 
+[![main-build][]][main-build-link]
+[![beta-build][]][beta-build-link]
 [![npm-badge][]][npm-link]
 [![bch-badge][]][bch-link]
 [![codacy-badge][]][codacy-link]
@@ -12,7 +14,7 @@
 
 ## Table of Contents
 
--   [Title](#sdk-pixel-js)
+<!-- -   [Title](#sdk-pixel-js) -->
 -   [Description](#description)
 -   [Install](#install)
 -   [Scripts](#scripts)
@@ -29,13 +31,13 @@ SDK for User Event Reporting
 Using npm:
 
 ```sh
-npm i --save @xylabs/sdk-js
+npm i --save @xylabs/sdk-pixel-js
 ```
 
 Using yarn:
 
 ```sh
-yarn add @xylabs/sdk-js
+yarn add @xylabs/sdk-pixel-js
 ```
 
 ## Scripts
