@@ -96,7 +96,6 @@ export class XyPixel {
         utm,
       },
     })
-    console.log(`Queue: ${JSON.stringify(this.queue, null, 2)}`)
     await this.tryFlushQueue()
   }
 
