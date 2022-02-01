@@ -31,7 +31,7 @@
     "@types/randombytes": "^2.0.0",
     "@xylabs/eslint-config": "^2.2.13",
     "@xylabs/rollup-config": "^1.1.1",
-    "@xylabs/ts-scripts": "1.0.32",
+    "@xylabs/ts-scripts": "1.0.36",
     "@xylabs/tsconfig": "^1.0.9",
     "bn.js": "^5.2.0",
     "eslint": "^8",
