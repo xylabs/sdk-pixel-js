@@ -4,7 +4,7 @@ import { UserEventSystem } from './Api'
 
 let systemInfo: UserEventSystem | undefined = undefined
 
-const getSystemInfo = () => {
+export const getSystemInfo = () => {
   try {
     systemInfo = systemInfo || parse(window.navigator.userAgent)
   } catch (ex) {
@@ -12,5 +12,3 @@ const getSystemInfo = () => {
   }
   return systemInfo
 }
-
-export default getSystemInfo

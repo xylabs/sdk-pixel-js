@@ -1,6 +1,6 @@
-import UserEventSystem from './UserEventSystem'
+import { UserEventSystem } from './UserEventSystem'
 
-interface UserEvent {
+export interface UserEvent {
   cid: string
   create_time?: number
   email?: string
@@ -16,5 +16,3 @@ interface UserEvent {
   utm?: Record<string, string>[] | Record<string, string[]>
   system?: UserEventSystem
 }
-
-export default UserEvent

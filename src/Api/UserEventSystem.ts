@@ -1,5 +1,3 @@
 import Bowser from 'bowser'
 
-type UserEventSystem = Bowser.Parser.ParsedResult
-
-export default UserEventSystem
+export type UserEventSystem = Bowser.Parser.ParsedResult

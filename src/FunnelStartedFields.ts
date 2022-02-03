@@ -1,7 +1,5 @@
-import CommonFields from './CommonFields'
+import { CommonFields } from './CommonFields'
 
-interface FunnelStartedFields extends CommonFields {
+export interface FunnelStartedFields extends CommonFields {
   name: string
 }
-
-export default FunnelStartedFields

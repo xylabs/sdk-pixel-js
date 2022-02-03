@@ -1,8 +1,6 @@
-import CommonFields from './CommonFields'
+import { CommonFields } from './CommonFields'
 
-interface ViewContentFields extends CommonFields {
+export interface ViewContentFields extends CommonFields {
   name: string
   path: string
 }
-
-export default ViewContentFields

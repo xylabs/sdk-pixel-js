@@ -1,6 +1,6 @@
 import randomBytes from 'randombytes'
 
-class UniqueUserId {
+export class UniqueUserId {
   private static localStorageId = '_coin_cid'
   public id: string
   constructor() {
@@ -15,5 +15,3 @@ class UniqueUserId {
     return this.id
   }
 }
-
-export default UniqueUserId

@@ -1,11 +1,11 @@
-import FunnelStartedFields from './FunnelStartedFields'
+import { FunnelStartedFields } from './FunnelStartedFields'
 import { XyPixel } from './Pixel'
-import TestStartedFields from './TestStartedFields'
-import UserClickFields from './UserClickFields'
-import UserEventHandler from './UserEventHandler'
-import ViewContentFields from './ViewContentFields'
+import { TestStartedFields } from './TestStartedFields'
+import { UserClickFields } from './UserClickFields'
+import { UserEventHandler } from './UserEventHandler'
+import { ViewContentFields } from './ViewContentFields'
 
-class XyUserEventHandler<T extends Record<string, unknown>> extends UserEventHandler<T> {
+export class XyUserEventHandler<T extends Record<string, unknown>> extends UserEventHandler<T> {
   constructor() {
     super()
   }
@@ -22,5 +22,3 @@ class XyUserEventHandler<T extends Record<string, unknown>> extends UserEventHan
     return await XyPixel.instance.send('ViewPage', fields)
   }
 }
-
-export default XyUserEventHandler

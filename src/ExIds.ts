@@ -1,4 +1,4 @@
-interface ExIds {
+export interface ExIds {
   fbp?: string
   fbc?: string
   ga?: string
@@ -7,5 +7,3 @@ interface ExIds {
   rdt_uid?: string
   tt_sessionId?: string
 }
-
-export default ExIds

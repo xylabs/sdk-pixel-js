@@ -1,7 +1,5 @@
-import CommonFields from './CommonFields'
+import { CommonFields } from './CommonFields'
 
-interface TestStartedFields extends CommonFields {
+export interface TestStartedFields extends CommonFields {
   name: string
 }
-
-export default TestStartedFields
