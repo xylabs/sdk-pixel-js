@@ -4,11 +4,11 @@ import Cookies from 'js-cookie'
 import md5 from 'md5'
 
 import { PixelApi, UserEvent } from './Api'
-import ExIds from './ExIds'
-import getSystemInfo from './getSystemInfo'
-import Referrer from './Referrer'
-import UniqueUserId from './UniqueUserId'
-import UtmFields from './UtmFields'
+import { ExIds } from './ExIds'
+import { getSystemInfo } from './getSystemInfo'
+import { Referrer } from './Referrer'
+import { UniqueUserId } from './UniqueUserId'
+import { UtmFields } from './UtmFields'
 
 const emailHashLocalStorageName = 'xy_email_hash'
 

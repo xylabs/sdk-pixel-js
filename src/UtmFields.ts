@@ -1,6 +1,6 @@
 import isEqual from 'lodash/isEqual'
 
-class UtmFields {
+export class UtmFields {
   private static localStorageId = '_coin_utm'
   public fields: Record<string, string>[] = []
   constructor() {
@@ -46,5 +46,3 @@ class UtmFields {
     return JSON.stringify(this.fields)
   }
 }
-
-export default UtmFields

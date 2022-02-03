@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import UserEvent from './UserEvent'
+import { UserEvent } from './UserEvent'
 
 const apiBaseUri: Record<string, string> = {
   beta: 'https://pixel.xylabs.com',
@@ -8,7 +8,7 @@ const apiBaseUri: Record<string, string> = {
   prod: 'https://pixel.xylabs.com',
 }
 
-class PixelApi {
+export class PixelApi {
   private endPoint: string
 
   /* baseUri can either be a preset (prod, beta, local), or a specific uri */
@@ -20,5 +20,3 @@ class PixelApi {
     return (await axios.post(this.endPoint, events)).data
   }
 }
-
-export default PixelApi
