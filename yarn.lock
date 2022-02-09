@@ -1139,16 +1139,18 @@
     remark-preset-lint-markdown-style-guide "^5"
 
 "@xylabs/rollup-config@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@xylabs/rollup-config/-/rollup-config-1.1.5.tgz#9ecb2eecb67b91f3318c712271e22964fcf2f13a"
-  integrity sha512-KkoDqjKysMIY10bCpuyfc6XnzGbjtfkT97GTtS3ogt4CkIxR5oET9excCgON8Q9mcUni9Fy8kjxgokrxSuUR9A==
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@xylabs/rollup-config/-/rollup-config-1.1.7.tgz#cbd004cd958fbb61a5dd49ebba2ceb3c9e7a0fc5"
+  integrity sha512-snKrcQTycQUAAFKPeFe2fdr30znxzCxmmzxOSM1ARyDakNPVUS6bWS8nTQCE7+JwLd3oQLxyQNvag2jSRCFs8A==
   dependencies:
     "@rollup/plugin-image" "^2.1.1"
     "@rollup/plugin-json" "^4.1.0"
     "@rollup/plugin-replace" "^3.0.1"
     "@rollup/plugin-strip" "^2.1.0"
     "@rollup/plugin-typescript" "^8.3.0"
-    rollup "^2.66.1"
+    rollup "^2.67.1"
+    tslib "^2.3.1"
+    typescript "^4.5.5"
 
 "@xylabs/sdk-js@^2":
   version "2.3.35"
@@ -6980,10 +6982,10 @@ rollbar@^2, rollbar@^2.24.0:
   optionalDependencies:
     decache "^3.0.5"
 
-rollup@^2.66.1:
-  version "2.67.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.67.0.tgz#496de7e641dbe39f681c5a82419cb5013917d406"
-  integrity sha512-W83AaERwvDiHwHEF/dfAfS3z1Be5wf7n+pO3ZAO5IQadCT2lBTr7WQ2MwZZe+nodbD+n3HtC4OCOAdsOPPcKZQ==
+rollup@^2.67.1:
+  version "2.67.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.67.1.tgz#4402665706fa00f321d446ce45f880e02cf54f01"
+  integrity sha512-1Sbcs4OuW+aD+hhqpIRl+RqooIpF6uQcfzU/QSI7vGkwADY6cM4iLsBGRM2CGLXDTDN5y/yShohFmnKegSPWzg==
   optionalDependencies:
     fsevents "~2.3.2"
 
