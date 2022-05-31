@@ -6,6 +6,7 @@ export interface UserEvent {
   email?: string
   email_hash?: string
   event?: string
+  event_id?: string
   fields?: Record<string, unknown>
   host?: string
   pathname?: string
