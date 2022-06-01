@@ -9,7 +9,6 @@ import { getSystemInfo } from './getSystemInfo'
 import { Referrer } from './Referrer'
 import { UniqueUserId } from './UniqueUserId'
 import { UtmFields } from './UtmFields'
-import randomBytes from 'randombytes'
 
 const emailHashLocalStorageName = 'xy_email_hash'
 
@@ -77,11 +76,7 @@ export class XyPixel {
     return XyPixel.utmFieldsObj
   }
 
-  private static generateEventId = () => {
-    return randomBytes(8).toString('base64')
-  }
-
-  public async send<T extends Record<string, unknown>>(event: string, fields?: T) {
+  public async send<T extends Record<string, unknown>>(event: string, fields?: T, eventId?: string) {
     this.updateFbId()
     const utm = XyPixel.utmFields().update()
     const referrer = new Referrer()
@@ -91,7 +86,7 @@ export class XyPixel {
         create_time: Date.now(),
         email_hash: this.email_hash ?? undefined,
         event,
-        event_id: XyPixel.generateEventId(),
+        event_id: eventId,
         exids: this.exids,
         fields,
         host: document.location.host,
