@@ -4,6 +4,7 @@ export interface XyLabsTrackingEventJson {
   email?: string
   email_hash?: string
   event?: string
+  event_id?: string
   exids?: Record<string, string>
   fields?: Record<string, unknown>
   host?: string
