@@ -76,7 +76,7 @@ export class XyPixel {
     return XyPixel.utmFieldsObj
   }
 
-  public async send<T extends Record<string, unknown>>(event: string, fields?: T) {
+  public async send<T extends Record<string, unknown>>(event: string, fields?: T, eventId?: string) {
     this.updateFbId()
     const utm = XyPixel.utmFields().update()
     const referrer = new Referrer()
@@ -86,6 +86,7 @@ export class XyPixel {
         create_time: Date.now(),
         email_hash: this.email_hash ?? undefined,
         event,
+        event_id: eventId,
         exids: this.exids,
         fields,
         host: document.location.host,
