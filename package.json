@@ -22,7 +22,7 @@
   "description": "Event Client for xylabs ESB",
   "devDependencies": {
     "@types/bn.js": "^5.1.0",
-    "@types/jest": "^27.4.0",
+    "@types/jest": "^28.1.1",
     "@types/js-cookie": "^3.0.1",
     "@types/jsdom": "^16.2.14",
     "@types/lodash": "^4.14.182",
