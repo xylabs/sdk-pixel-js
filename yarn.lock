@@ -1331,7 +1331,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.0.0":
+"@types/node@npm:*, @types/node@npm:^18.0.5":
   version: 18.0.5
   resolution: "@types/node@npm:18.0.5"
   checksum: cc9c67d0074252f798d226dd95a22e0e8851cf7fc623ef4a603d9ad2c2b46650f930147062ea33719008b1de67f08f499ad693307d02f8396e6f1fead8144329
@@ -1729,7 +1729,7 @@ __metadata:
     "@types/md5": ^2.3.2
     "@types/randombytes": ^2.0.0
     "@xylabs/eslint-config": ^2.3.30
-    "@xylabs/sdk-js": ^2.5.9
+    "@xylabs/sdk-js": ^2.6.0
     "@xylabs/ts-scripts": 1.0.66
     "@xylabs/tsconfig": ^1.0.14
     async-mutex: ^0.3.2
@@ -1767,16 +1767,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xylabs/sdk-js@npm:^2.5.9":
-  version: 2.5.9
-  resolution: "@xylabs/sdk-js@npm:2.5.9"
+"@xylabs/sdk-js@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "@xylabs/sdk-js@npm:2.6.0"
   dependencies:
-    "@types/node": ^18.0.0
+    "@types/node": ^18.0.5
     axios: ^0.27.2
     bn.js: ^5.2.1
     buffer: ^6.0.3
     rollbar: ^2.25.0
-  checksum: fc60384c6c1a4ebf6397ddbf85ab9e00c2087301e2f2e6138cb1470da01e78f72756b34f9e856d8efb32e57980efa0d7ff001ecc3556221ff55fe92b9441e240
+  checksum: 559e96d5a4e743f9b1932fb36e9bc63b1337c437c66ce8c253e5453844cbbbdb75cb7c6971375a2c976a9a5da7d02a0f3c383df06ca2b6d7cd328074fe297a95
   languageName: node
   linkType: hard
 
