@@ -72,7 +72,6 @@
     "test": "jest"
   },
   "sideEffects": false,
-  "version": "1.4.4",
-  "packageManager": "yarn@3.2.1",
-  "type": "module"
+  "version": "1.4.5",
+  "packageManager": "yarn@3.2.1"
 }
