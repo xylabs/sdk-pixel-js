@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "@types/js-cookie": "^3.0.2",
-    "@types/jsdom": "^16.2.14",
+    "@types/jsdom": "^20.0.1",
     "@types/lodash": "^4.14.182",
     "@types/md5": "^2.3.2",
     "@types/randombytes": "^2.0.0",
