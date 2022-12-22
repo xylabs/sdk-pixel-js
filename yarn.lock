@@ -2528,27 +2528,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xylabs/assert@npm:^2.6.10":
-  version: 2.6.10
-  resolution: "@xylabs/assert@npm:2.6.10"
-  checksum: df5233794749bd88187b520c7ee69687c7b5f344c2ff403f65a074ffa6e481c93ab64559c63eef8c41e7a8dd0645d89853648bff0d12a7bf44df3834c5b4625b
+"@xylabs/assert@npm:^2.6.12":
+  version: 2.6.12
+  resolution: "@xylabs/assert@npm:2.6.12"
+  checksum: 15a7a8ccdcb8824aed7eaecc80e0622eec44e0a86596283e1ea13943851cab63bb2b8bda9c2499411cda98839ddb28672dd1783b954f73d045286c42055115ad
   languageName: node
   linkType: hard
 
-"@xylabs/bignumber@npm:^2.6.10":
-  version: 2.6.10
-  resolution: "@xylabs/bignumber@npm:2.6.10"
+"@xylabs/bignumber@npm:^2.6.12":
+  version: 2.6.12
+  resolution: "@xylabs/bignumber@npm:2.6.12"
   dependencies:
     bn.js: ^5.2.1
-    tslib: ^2.4.1
-  checksum: d742dc4f073b6774e7a91f66653e379a3cc24cc560968dfbc779ffa0a2b7bfd272a09d3f9f641be803ab57c6d2c64e11a14064d9a13acd9b7befd6c964a6ce25
+  checksum: f2ab945ef8879c6d1d5fbabf1e899ea326041b76af04e56cbb791bda1333048766c6ac592df95f810d300fd071a732fdbb69058ba0226899bcbaaa333b72761b
   languageName: node
   linkType: hard
 
-"@xylabs/delay@npm:^2.6.10":
-  version: 2.6.10
-  resolution: "@xylabs/delay@npm:2.6.10"
-  checksum: 41638db38e15d8dbbb7f08de5f479cf1c122905d13d1bf88a56b79ed5fa4ca60605fa39e275e419b9c88ceecf09770e26ca2ed9b740edf83a8ed220351dfbf3a
+"@xylabs/delay@npm:^2.6.12":
+  version: 2.6.12
+  resolution: "@xylabs/delay@npm:2.6.12"
+  checksum: b3cc9a62c4a639f62144a3af90cffca92bebeb715ce9e530e578774dc537c302412dce4db5d9918789b24c4cc0d43ceb52c3cc9f072714ba0b1d01ed47e37c5d
   languageName: node
   linkType: hard
 
@@ -2582,20 +2581,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xylabs/exists@npm:^2.6.10":
-  version: 2.6.10
-  resolution: "@xylabs/exists@npm:2.6.10"
-  checksum: 615188c5ab2c6bc83e0189c5e671619ed5d874d84f356dbb4486311502267fd8505b3f186f482c0a94a6d7b05ba16e257312506ac5a6d2e6ae0dd02eb0891a24
+"@xylabs/exists@npm:^2.6.12":
+  version: 2.6.12
+  resolution: "@xylabs/exists@npm:2.6.12"
+  checksum: e2b3e58e3d48bd98b8378a20b7bc22de02e71761c6ad102f75258471082ae76292249cdcb6fa161d3097ce919b527d2d4f8a020da7e2f5e5fe9691c7c98798c0
   languageName: node
   linkType: hard
 
-"@xylabs/forget@npm:^2.6.10":
-  version: 2.6.10
-  resolution: "@xylabs/forget@npm:2.6.10"
+"@xylabs/forget@npm:^2.6.12":
+  version: 2.6.12
+  resolution: "@xylabs/forget@npm:2.6.12"
   dependencies:
-    "@xylabs/delay": ^2.6.10
-    tslib: ^2.4.1
-  checksum: 2f3c1217cd317eb2b6dd1ced8dcdfb3fd98042bbbe35006c325a50701ed12b84d2beaa4890ea891ffa197274bd7b1ec91a9f3f4167c3933f880f956abdf02af5
+    "@xylabs/delay": ^2.6.12
+  checksum: feaf18853cd24de7ed485bc2e056f7d48dd4484871b1153e53d6083f8fdf72197b03b257ef6508c4d7327b829853ffeb0432a8c145f55a4a29785cd95f32c172
   languageName: node
   linkType: hard
 
@@ -2635,18 +2633,18 @@ __metadata:
   linkType: soft
 
 "@xylabs/sdk-js@npm:^2.6.10":
-  version: 2.6.10
-  resolution: "@xylabs/sdk-js@npm:2.6.10"
+  version: 2.6.12
+  resolution: "@xylabs/sdk-js@npm:2.6.12"
   dependencies:
-    "@xylabs/assert": ^2.6.10
-    "@xylabs/bignumber": ^2.6.10
-    "@xylabs/delay": ^2.6.10
-    "@xylabs/exists": ^2.6.10
-    "@xylabs/forget": ^2.6.10
-    rollbar: ^2.25.2
+    "@xylabs/assert": ^2.6.12
+    "@xylabs/bignumber": ^2.6.12
+    "@xylabs/delay": ^2.6.12
+    "@xylabs/exists": ^2.6.12
+    "@xylabs/forget": ^2.6.12
+    rollbar: ^2.26.0
   peerDependencies:
     axios: ^1.2.1
-  checksum: 83e75a4a83d05be219d6b56b392a1d2a72b23a47bb59ced94fdb7b7b394c2ef629d1267bbdd9bf4df1df221df689b406475aa7fb8ac68ac625d933f40555cb3b
+  checksum: 90369dcbcacbe2f758a98edf645fa212fa89607817943b34889d453f66e25a2c3d2f78e017a81bf46452366f62b50e426767810821f6fd4a2a443e0434a6717b
   languageName: node
   linkType: hard
 
@@ -11510,7 +11508,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollbar@npm:^2.25.2":
+"rollbar@npm:^2.26.0":
   version: 2.26.0
   resolution: "rollbar@npm:2.26.0"
   dependencies:
@@ -12647,7 +12645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.4.1":
+"tslib@npm:^2.3.1, tslib@npm:^2.4.0":
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
   checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
