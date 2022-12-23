@@ -1,4 +1,4 @@
-import { assertEx } from '@xylabs/sdk-js'
+import { assertEx } from '@xylabs/assert'
 import { Mutex } from 'async-mutex'
 import Cookies from 'js-cookie'
 import md5 from 'md5'
