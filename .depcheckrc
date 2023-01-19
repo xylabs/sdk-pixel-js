@@ -1,3 +1,13 @@
 ignores: [
-
+  "@types/jest",
+  "@types/jsdom",
+  "@types/node",
+  "@xylabs/tsconfig-dom",
+  "jest",
+  "jest-environment-jsdom",
+  "jsdom",
+  "npm-package-json-lint",
+  "ts-jest",
+  "ts-node",
+  "typescript"
 ]
