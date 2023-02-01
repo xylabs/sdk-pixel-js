@@ -9,6 +9,15 @@ export class Referrer {
     window.localStorage.setItem(Referrer.storageId, this.local)
   }
 
+  public toJson() {
+    if ((this.local && this.local.length > 0) || (this.session && this.session.length > 0)) {
+      return {
+        local: this.local,
+        session: this.session,
+      }
+    }
+  }
+
   private getFromLocal() {
     const value = window.localStorage.getItem(Referrer.storageId)
     if (value && value.length > 0) {
@@ -20,15 +29,6 @@ export class Referrer {
     const value = sessionStorage.getItem(Referrer.storageId)
     if (value && value.length > 0) {
       return value
-    }
-  }
-
-  public toJson() {
-    if ((this.local && this.local.length > 0) || (this.session && this.session.length > 0)) {
-      return {
-        local: this.local,
-        session: this.session,
-      }
     }
   }
 }

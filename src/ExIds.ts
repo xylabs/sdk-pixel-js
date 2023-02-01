@@ -1,9 +1,9 @@
 export interface ExIds {
-  fbp?: string
   fbc?: string
+  fbp?: string
   ga?: string
   gclid?: string
-  scid?: string
   rdt_uid?: string
+  scid?: string
   tt_sessionId?: string
 }

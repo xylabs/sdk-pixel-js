@@ -1,4 +1,4 @@
-import isEqual from 'lodash/isEqual'
+import { isEqual } from 'lodash-es'
 
 export class UtmFields {
   private static localStorageId = '_coin_utm'
@@ -31,6 +31,10 @@ export class UtmFields {
     return Object.keys(record).length > 0 ? record : null
   }
 
+  public toString() {
+    return JSON.stringify(this.fields)
+  }
+
   //check the query string and if there an new/updated utm values, add them to the fields
   public update() {
     const record = this.getUtmRecord()
@@ -40,9 +44,5 @@ export class UtmFields {
       }
     }
     return this.fields ?? undefined
-  }
-
-  public toString() {
-    return JSON.stringify(this.fields)
   }
 }

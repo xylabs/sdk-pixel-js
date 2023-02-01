@@ -13,17 +13,40 @@ import { UtmFields } from './UtmFields'
 const emailHashLocalStorageName = 'xy_email_hash'
 
 export class XyPixel {
-  public pixelId?: string
+  public static api = new PixelApi()
+
+  private static _instance?: XyPixel
+  private static utmFieldsObj: UtmFields
+
+  public cid = new UniqueUserId().id
   public email?: string
   public email_hash?: string | null
-  public queue: UserEvent[] = []
-  public cid = new UniqueUserId().id
   public exids?: ExIds
+  public pixelId?: string
+
+  public queue: UserEvent[] = []
+
   private queueMutex = new Mutex()
 
   private constructor(pixelId: string) {
     this.pixelId = pixelId
     this.email_hash = localStorage.getItem(emailHashLocalStorageName)
+  }
+
+  public static get instance(): XyPixel {
+    return assertEx(this._instance, 'XyPixel uninitialized')
+  }
+
+  public static init(pixelId: string) {
+    this._instance = new XyPixel(pixelId)
+    return this._instance
+  }
+
+  private static utmFields = () => {
+    if (XyPixel.utmFieldsObj === undefined) {
+      XyPixel.utmFieldsObj = new UtmFields()
+    }
+    return XyPixel.utmFieldsObj
   }
 
   public identify(email?: string) {
@@ -32,48 +55,6 @@ export class XyPixel {
     if (this.email_hash) {
       localStorage.setItem(emailHashLocalStorageName, this.email_hash)
     }
-  }
-
-  private updateFbId() {
-    this.exids = {
-      ...{
-        fbc: Cookies.get('_fbc'),
-        fbp: Cookies.get('_fbp'),
-        ga: Cookies.get('_ga'),
-        gclid: Cookies.get('_gclid'),
-        rdt_uid: Cookies.get('rdt_uid'),
-        scid: Cookies.get('_scid'),
-        tt_sessionId: sessionStorage.getItem('tt_sessionId') ?? undefined,
-      },
-    }
-  }
-
-  private async tryFlushQueue() {
-    await this.queueMutex.runExclusive(async () => {
-      if (this.queue.length === 0) return
-      const api = XyPixel.api
-      if (api) {
-        const events = this.queue
-        this.queue = []
-        try {
-          await api.trackEvents(events)
-        } catch (ex) {
-          if (events) {
-            //put it back since it failed
-            this.queue = this.queue.concat(events)
-          }
-          console.error(ex)
-        }
-      }
-    })
-  }
-
-  private static utmFieldsObj: UtmFields
-  private static utmFields = () => {
-    if (XyPixel.utmFieldsObj === undefined) {
-      XyPixel.utmFieldsObj = new UtmFields()
-    }
-    return XyPixel.utmFieldsObj
   }
 
   public async send<T extends Record<string, unknown>>(event: string, fields?: T, eventId?: string) {
@@ -100,18 +81,37 @@ export class XyPixel {
     await this.tryFlushQueue()
   }
 
-  private static _instance?: XyPixel
-  public static get instance(): XyPixel {
-    return assertEx(this._instance, 'XyPixel uninitialized')
+  private async tryFlushQueue() {
+    await this.queueMutex.runExclusive(async () => {
+      if (this.queue.length === 0) return
+      const api = XyPixel.api
+      if (api) {
+        const events = this.queue
+        this.queue = []
+        try {
+          await api.trackEvents(events)
+        } catch (ex) {
+          if (events) {
+            //put it back since it failed
+            this.queue = this.queue.concat(events)
+          }
+          console.error(ex)
+        }
+      }
+    })
   }
 
-  public static init(pixelId: string) {
-    this._instance = new XyPixel(pixelId)
-    return this._instance
-  }
-
-  public static api = new PixelApi()
-  public static selectApi(api: PixelApi) {
-    this.api = api
+  private updateFbId() {
+    this.exids = {
+      ...{
+        fbc: Cookies.get('_fbc'),
+        fbp: Cookies.get('_fbp'),
+        ga: Cookies.get('_ga'),
+        gclid: Cookies.get('_gclid'),
+        rdt_uid: Cookies.get('rdt_uid'),
+        scid: Cookies.get('_scid'),
+        tt_sessionId: sessionStorage.getItem('tt_sessionId') ?? undefined,
+      },
+    }
   }
 }

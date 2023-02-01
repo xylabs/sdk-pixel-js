@@ -8,13 +8,13 @@ export interface XyLabsTrackingEventJson {
   exids?: Record<string, string>
   fields?: Record<string, unknown>
   host?: string
+  ip?: string
   pathname?: string
   pixel?: string
   receive_time?: number
   rid?: string
+  system?: unknown
+  ua?: string
   uid?: string
   utm?: Record<string, string>[] | Record<string, string[]>
-  system?: unknown
-  ip?: string
-  ua?: string
 }

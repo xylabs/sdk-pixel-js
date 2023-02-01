@@ -4,8 +4,8 @@ import { UserClickFields } from './UserClickFields'
 import { ViewContentFields } from './ViewContentFields'
 
 export abstract class UserEventHandler<T> {
-  abstract testStarted(fields: T | TestStartedFields): Promise<void>
   abstract funnelStarted(fields: T | FunnelStartedFields): Promise<void>
-  abstract viewContent(fields: T | ViewContentFields): Promise<void>
+  abstract testStarted(fields: T | TestStartedFields): Promise<void>
   abstract userClick(fields: T | UserClickFields): Promise<void>
+  abstract viewContent(fields: T | ViewContentFields): Promise<void>
 }

@@ -13,7 +13,7 @@ export interface UserEvent {
   pixel?: string
   receive_time?: number
   rid?: string
+  system?: UserEventSystem
   uid?: string
   utm?: Record<string, string>[] | Record<string, string[]>
-  system?: UserEventSystem
 }
