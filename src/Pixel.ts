@@ -42,6 +42,10 @@ export class XyPixel {
     return this._instance
   }
 
+  public static selectApi(api: PixelApi) {
+    this.api = api
+  }
+
   private static utmFields = () => {
     if (XyPixel.utmFieldsObj === undefined) {
       XyPixel.utmFieldsObj = new UtmFields()
