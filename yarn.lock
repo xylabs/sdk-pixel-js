@@ -2552,8 +2552,8 @@ __metadata:
   linkType: hard
 
 "@xylabs/eslint-config@npm:^2.12.30":
-  version: 2.12.30
-  resolution: "@xylabs/eslint-config@npm:2.12.30"
+  version: 2.12.32
+  resolution: "@xylabs/eslint-config@npm:2.12.32"
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/eslint-parser": ^7.19.1
@@ -2577,7 +2577,7 @@ __metadata:
     typescript: ^4.9.5
   peerDependencies:
     eslint: ^8.23.0
-  checksum: d226b258b56ff06b420510072750ed6342025bc0a8201fe6e071ee52ea53899df7fa705d12bc602d0a7053b8009be5fa5943b7fc3c1f16a728bfb7403655ac59
+  checksum: a0fcb70418cc8b6ada61e5fe27d3669037a35080e58f7ba622dbf2a103aa0d634c32dc661da688860bd0c1019ed39843fac4deec0636990d014153e67749f4a2
   languageName: node
   linkType: hard
 
