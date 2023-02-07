@@ -2702,12 +2702,12 @@ __metadata:
   linkType: hard
 
 "@xylabs/tsconfig-dom@npm:^2.12.30":
-  version: 2.12.30
-  resolution: "@xylabs/tsconfig-dom@npm:2.12.30"
+  version: 2.13.7
+  resolution: "@xylabs/tsconfig-dom@npm:2.13.7"
   dependencies:
-    "@xylabs/tsconfig": ^2.12.30
+    "@xylabs/tsconfig": ^2.13.7
     typescript: ^4.9.5
-  checksum: 98de3a359854afcab4e56589cf963dd525d5f65b3fd202c25af0578605bb46e8d02d284aa2a4aa0c65deb23435c9097205b48824cf411f7aaa5e6f8f38852bef
+  checksum: 38cd9e815c8fecc687d69ad0c7be9cdd7de5ecebf28beefc0fbc7fcce686cb3ae318e5078ced581976d6c8716a1b54167e4505bf5895e6f7d835edcd521489f7
   languageName: node
   linkType: hard
 
@@ -2717,6 +2717,15 @@ __metadata:
   dependencies:
     typescript: ^4.9.5
   checksum: 48b1b76ee89adfda3ab0e295816c8430449bd4cf3116f4bbb47f3edf0b5567a878f5ecf9e2f80fbdc17f546b36ad451a493bd023d95f4a37cdb3969134c82adf
+  languageName: node
+  linkType: hard
+
+"@xylabs/tsconfig@npm:^2.13.7":
+  version: 2.13.7
+  resolution: "@xylabs/tsconfig@npm:2.13.7"
+  dependencies:
+    typescript: ^4.9.5
+  checksum: da46f6b5a4cd154d539e3d9d4144bbd0dc14672ecadd209d43bf8347f2a51eb4e40e450d90bc0ecca38fefd759c641a5fbe73ccbc5caaa635694134f73b2753a
   languageName: node
   linkType: hard
 
