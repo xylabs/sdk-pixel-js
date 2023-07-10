@@ -40,7 +40,7 @@ export class XyPixel {
         fbc: Cookies.get('_fbc'),
         fbp: Cookies.get('_fbp'),
         ga: Cookies.get('_ga'),
-        gclid: Cookies.get('_gclid'),
+        gclid: Cookies.get('_gcl_aw'),
         rdt_uid: Cookies.get('rdt_uid'),
         scid: Cookies.get('_scid'),
         tt_sessionId: sessionStorage.getItem('tt_sessionId') ?? undefined,
