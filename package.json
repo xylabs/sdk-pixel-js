@@ -71,6 +71,6 @@
     "url": "https://github.com/xylabs/sdk-pixel-js.git"
   },
   "sideEffects": false,
-  "version": "1.4.13",
+  "version": "1.4.14",
   "packageManager": "yarn@3.3.1"
 }
