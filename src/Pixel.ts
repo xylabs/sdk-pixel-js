@@ -95,7 +95,7 @@ export class XyPixel {
         } catch (ex) {
           if (events) {
             //put it back since it failed
-            this.queue = this.queue.concat(events)
+            this.queue = [...this.queue, ...events]
           }
           console.error(ex)
         }
