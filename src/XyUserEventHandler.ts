@@ -10,19 +10,19 @@ export class XyUserEventHandler<T extends Record<string, unknown>> extends UserE
     super()
   }
 
-  public async funnelStarted(fields: T | FunnelStartedFields) {
+  async funnelStarted(fields: T | FunnelStartedFields) {
     return await XyPixel.instance.send('FunnelStarted', fields)
   }
 
-  public async testStarted(fields: T | TestStartedFields) {
+  async testStarted(fields: T | TestStartedFields) {
     return await XyPixel.instance.send('TestStarted', fields)
   }
 
-  public async userClick(fields: T | UserClickFields) {
+  async userClick(fields: T | UserClickFields) {
     return await XyPixel.instance.send('ViewPage', fields)
   }
 
-  public async viewContent(fields: T | ViewContentFields) {
+  async viewContent(fields: T | ViewContentFields) {
     return await XyPixel.instance.send('ViewContent', fields)
   }
 }

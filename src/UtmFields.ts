@@ -1,8 +1,8 @@
-import { isEqual } from 'lodash-es'
+import { isEqual } from '@xylabs/lodash'
 
 export class UtmFields {
   private static localStorageId = '_coin_utm'
-  public fields: Record<string, string>[] = []
+  fields: Record<string, string>[] = []
   constructor() {
     const storedString = window.localStorage.getItem(UtmFields.localStorageId) ?? '[]'
     try {
@@ -18,7 +18,7 @@ export class UtmFields {
     window.localStorage.setItem(UtmFields.localStorageId, JSON.stringify(this.fields))
   }
 
-  public getUtmRecord = () => {
+  getUtmRecord = () => {
     const record: Record<string, string> = {}
     const parsedQueryString = document.location.search.split('?')[1]?.split('&') ?? []
     parsedQueryString.map((item) => {
@@ -31,17 +31,15 @@ export class UtmFields {
     return Object.keys(record).length > 0 ? record : null
   }
 
-  public toString() {
+  toString() {
     return JSON.stringify(this.fields)
   }
 
   //check the query string and if there an new/updated utm values, add them to the fields
-  public update() {
+  update() {
     const record = this.getUtmRecord()
-    if (record) {
-      if (!isEqual(this.fields[this.fields.length - 1], record)) {
-        this.fields.push(record)
-      }
+    if (record && !isEqual(this.fields.at(-1), record)) {
+      this.fields.push(record)
     }
     return this.fields ?? undefined
   }

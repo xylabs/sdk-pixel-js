@@ -1,3 +1,4 @@
+import { ExIds } from '../ExIds'
 import { UserEventSystem } from './UserEventSystem'
 
 export interface UserEvent {
@@ -7,11 +8,13 @@ export interface UserEvent {
   email_hash?: string
   event?: string
   event_id?: string
+  exids?: ExIds
   fields?: Record<string, unknown>
   host?: string
   pathname?: string
   pixel?: string
   receive_time?: number
+  referrer?: { local: string; session: string }
   rid?: string
   system?: UserEventSystem
   uid?: string

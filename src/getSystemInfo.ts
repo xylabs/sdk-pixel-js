@@ -2,7 +2,7 @@ import { parse } from 'bowser'
 
 import { UserEventSystem } from './Api'
 
-let systemInfo: UserEventSystem | undefined = undefined
+let systemInfo: UserEventSystem | undefined
 
 export const getSystemInfo = () => {
   try {

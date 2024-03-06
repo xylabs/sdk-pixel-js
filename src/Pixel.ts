@@ -13,18 +13,18 @@ import { UtmFields } from './UtmFields'
 const emailHashLocalStorageName = 'xy_email_hash'
 
 export class XyPixel {
-  public static api = new PixelApi()
+  static api = new PixelApi()
 
   private static _instance?: XyPixel
   private static utmFieldsObj: UtmFields
 
-  public cid = new UniqueUserId().id
-  public email?: string
-  public email_hash?: string | null
-  public exids?: ExIds
-  public pixelId?: string
+  cid = new UniqueUserId().id
+  email?: string
+  email_hash?: string | null
+  exids?: ExIds
+  pixelId?: string
 
-  public queue: UserEvent[] = []
+  queue: UserEvent[] = []
 
   private queueMutex = new Mutex()
 
@@ -33,16 +33,16 @@ export class XyPixel {
     this.email_hash = localStorage.getItem(emailHashLocalStorageName)
   }
 
-  public static get instance(): XyPixel {
+  static get instance(): XyPixel {
     return assertEx(this._instance, 'XyPixel uninitialized')
   }
 
-  public static init(pixelId: string) {
+  static init(pixelId: string) {
     this._instance = new XyPixel(pixelId)
     return this._instance
   }
 
-  public static selectApi(api: PixelApi) {
+  static selectApi(api: PixelApi) {
     this.api = api
   }
 
@@ -53,7 +53,7 @@ export class XyPixel {
     return XyPixel.utmFieldsObj
   }
 
-  public identify(email?: string) {
+  identify(email?: string) {
     this.email = email
     this.email_hash = email ? md5(email) : undefined
     if (this.email_hash) {
@@ -61,26 +61,24 @@ export class XyPixel {
     }
   }
 
-  public async send<T extends Record<string, unknown>>(event: string, fields?: T, eventId?: string) {
+  async send<T extends Record<string, unknown>>(event: string, fields?: T, eventId?: string) {
     this.updateFbId()
     const utm = XyPixel.utmFields().update()
     const referrer = new Referrer()
     this.queue.push({
-      ...{
-        cid: this.cid,
-        create_time: Date.now(),
-        email_hash: this.email_hash ?? undefined,
-        event,
-        event_id: eventId,
-        exids: this.exids,
-        fields,
-        host: document.location.host,
-        pathname: document.location.pathname,
-        pixel: this.pixelId,
-        referrer: referrer.toJson(),
-        system: getSystemInfo(),
-        utm,
-      },
+      cid: this.cid,
+      create_time: Date.now(),
+      email_hash: this.email_hash ?? undefined,
+      event,
+      event_id: eventId,
+      exids: this.exids,
+      fields,
+      host: document.location.host,
+      pathname: document.location.pathname,
+      pixel: this.pixelId,
+      referrer: referrer.toJson(),
+      system: getSystemInfo(),
+      utm,
     })
     await this.tryFlushQueue()
   }
@@ -107,15 +105,13 @@ export class XyPixel {
 
   private updateFbId() {
     this.exids = {
-      ...{
-        fbc: Cookies.get('_fbc'),
-        fbp: Cookies.get('_fbp'),
-        ga: Cookies.get('_ga'),
-        gclid: Cookies.get('_gcl_aw'),
-        rdt_uid: Cookies.get('rdt_uid'),
-        scid: Cookies.get('_scid'),
-        tt_sessionId: sessionStorage.getItem('tt_sessionId') ?? undefined,
-      },
+      fbc: Cookies.get('_fbc'),
+      fbp: Cookies.get('_fbp'),
+      ga: Cookies.get('_ga'),
+      gclid: Cookies.get('_gcl_aw'),
+      rdt_uid: Cookies.get('rdt_uid'),
+      scid: Cookies.get('_scid'),
+      tt_sessionId: sessionStorage.getItem('tt_sessionId') ?? undefined,
     }
   }
 }

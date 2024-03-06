@@ -16,7 +16,7 @@ export class PixelApi {
     this.endPoint = apiBaseUri[baseUri] ? `${apiBaseUri[baseUri]}/t/event/queue` : baseUri
   }
 
-  public async trackEvents(events: UserEvent[]) {
+  async trackEvents(events: UserEvent[]) {
     return (await axios.post(this.endPoint, events)).data
   }
 }
