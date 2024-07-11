@@ -3,12 +3,12 @@ import { Mutex } from 'async-mutex'
 import Cookies from 'js-cookie'
 import md5 from 'md5'
 
-import { PixelApi, UserEvent } from './Api'
-import { ExIds } from './ExIds'
-import { getSystemInfo } from './getSystemInfo'
-import { Referrer } from './Referrer'
-import { UniqueUserId } from './UniqueUserId'
-import { UtmFields } from './UtmFields'
+import { PixelApi, UserEvent } from './Api/index.js'
+import { ExIds } from './ExIds.js'
+import { getSystemInfo } from './getSystemInfo.js'
+import { Referrer } from './Referrer.js'
+import { UniqueUserId } from './UniqueUserId.js'
+import { UtmFields } from './UtmFields.js'
 
 const emailHashLocalStorageName = 'xy_email_hash'
 

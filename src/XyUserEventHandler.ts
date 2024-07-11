@@ -1,9 +1,9 @@
-import { FunnelStartedFields } from './FunnelStartedFields'
-import { XyPixel } from './Pixel'
-import { TestStartedFields } from './TestStartedFields'
-import { UserClickFields } from './UserClickFields'
-import { UserEventHandler } from './UserEventHandler'
-import { ViewContentFields } from './ViewContentFields'
+import { FunnelStartedFields } from './FunnelStartedFields.js'
+import { XyPixel } from './Pixel.js'
+import { TestStartedFields } from './TestStartedFields.js'
+import { UserClickFields } from './UserClickFields.js'
+import { UserEventHandler } from './UserEventHandler.js'
+import { ViewContentFields } from './ViewContentFields.js'
 
 export class XyUserEventHandler<T extends Record<string, unknown>> extends UserEventHandler<T> {
   constructor() {

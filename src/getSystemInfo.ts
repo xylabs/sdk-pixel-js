@@ -1,6 +1,6 @@
 import { parse } from 'bowser'
 
-import { UserEventSystem } from './Api'
+import { UserEventSystem } from './Api/index.js'
 
 let systemInfo: UserEventSystem | undefined
 

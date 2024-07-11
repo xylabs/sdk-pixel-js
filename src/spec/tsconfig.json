@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
     "experimentalDecorators": true
   },
   "extends": "@xylabs/tsconfig-jest"

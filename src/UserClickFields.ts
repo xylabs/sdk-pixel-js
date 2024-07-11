@@ -1,4 +1,4 @@
-import { CommonFields } from './CommonFields'
+import { CommonFields } from './CommonFields.js'
 
 export interface UserClickFields extends CommonFields {
   elementName: string

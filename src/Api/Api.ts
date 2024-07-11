@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { UserEvent } from './UserEvent'
+import { UserEvent } from './UserEvent.js'
 
 const apiBaseUri: Record<string, string> = {
   beta: 'https://pixel.xylabs.com',
