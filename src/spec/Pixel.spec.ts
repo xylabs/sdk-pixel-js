@@ -1,5 +1,9 @@
-import { PixelApi } from '../Api'
-import { XyPixel } from '../Pixel'
+/**
+ * @jest-environment jsdom
+ */
+
+import { PixelApi } from '../Api/index.ts'
+import { XyPixel } from '../Pixel.ts'
 
 test('all', async () => {
   XyPixel.api = new PixelApi('prod')
