@@ -15,8 +15,7 @@
     "bowser": "^2.11.0",
     "js-cookie": "^3.0.5",
     "lodash-es": "^4.17.21",
-    "md5": "^2.3.0",
-    "randombytes": "^2.1.0"
+    "md5": "^2.3.0"
   },
   "peerDependencies": {
     "axios": "^1.2"
@@ -89,7 +88,7 @@
     "url": "https://github.com/xylabs/sdk-pixel-js.git"
   },
   "sideEffects": false,
-  "version": "1.6.0",
+  "version": "1.7.0",
   "packageManager": "yarn@4.3.1",
   "type": "module"
 }

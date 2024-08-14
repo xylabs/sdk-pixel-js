@@ -1,5 +1,3 @@
-import randomBytes from 'randombytes'
-
 export class UniqueUserId {
   private static localStorageId = '_coin_cid'
   id: string
@@ -14,6 +12,6 @@ export class UniqueUserId {
   }
 
   private generateId() {
-    return randomBytes(16).toString('base64')
+    return crypto.randomUUID()
   }
 }
