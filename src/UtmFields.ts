@@ -1,4 +1,4 @@
-import { isEqual } from '@xylabs/lodash'
+import isEqual from 'fast-deep-equal'
 
 export class UtmFields {
   private static localStorageId = '_coin_utm'
@@ -10,7 +10,7 @@ export class UtmFields {
     } catch {
       this.fields = []
     }
-    //this clears the old object version if needed
+    // this clears the old object version if needed
     if (!Array.isArray(this.fields)) {
       this.fields = []
     }
@@ -35,7 +35,7 @@ export class UtmFields {
     return JSON.stringify(this.fields)
   }
 
-  //check the query string and if there an new/updated utm values, add them to the fields
+  // check the query string and if there an new/updated utm values, add them to the fields
   update() {
     const record = this.getUtmRecord()
     if (record && !isEqual(this.fields.at(-1), record)) {

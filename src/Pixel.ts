@@ -1,7 +1,7 @@
 import { assertEx } from '@xylabs/assert'
 import { Mutex } from 'async-mutex'
 import Cookies from 'js-cookie'
-import md5 from 'md5'
+import md5 from 'spark-md5'
 
 import { PixelApi, UserEvent } from './Api/index.js'
 import { ExIds } from './ExIds.js'
@@ -55,7 +55,7 @@ export class XyPixel {
 
   identify(email?: string) {
     this.email = email
-    this.email_hash = email ? md5(email) : undefined
+    this.email_hash = email ? md5.hash(email, true) : undefined
     if (this.email_hash) {
       localStorage.setItem(emailHashLocalStorageName, this.email_hash)
     }
@@ -94,7 +94,7 @@ export class XyPixel {
           await api.trackEvents(events)
         } catch (ex) {
           if (events) {
-            //put it back since it failed
+            // put it back since it failed
             this.queue = [...this.queue, ...events]
           }
           console.error(ex)
