@@ -1,7 +1,7 @@
-import { FunnelStartedFields } from './FunnelStartedFields.js'
-import { TestStartedFields } from './TestStartedFields.js'
-import { UserClickFields } from './UserClickFields.js'
-import { ViewContentFields } from './ViewContentFields.js'
+import type { FunnelStartedFields } from './FunnelStartedFields.js'
+import type { TestStartedFields } from './TestStartedFields.js'
+import type { UserClickFields } from './UserClickFields.js'
+import type { ViewContentFields } from './ViewContentFields.js'
 
 export abstract class UserEventHandler<T> {
   abstract funnelStarted(fields: T | FunnelStartedFields): Promise<void>

@@ -1,6 +1,6 @@
 import Bowser from 'bowser'
 
-import { UserEventSystem } from './Api/index.js'
+import type { UserEventSystem } from './Api/index.js'
 
 let systemInfo: UserEventSystem | undefined
 

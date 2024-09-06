@@ -1,4 +1,4 @@
-import { CommonFields } from './CommonFields.js'
+import type { CommonFields } from './CommonFields.js'
 
 export interface ViewContentFields extends CommonFields {
   name: string

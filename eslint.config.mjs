@@ -1,11 +1,11 @@
 // eslint.config.mjs
 
-import { config as xylabsConfig, rulesConfig, importConfig } from '@xylabs/eslint-config-flat'
+import {
+  config as xylabsConfig, rulesConfig, importConfig,
+} from '@xylabs/eslint-config-flat'
 
 export default [
-  {
-    ignores: ['.yarn/**', 'jest.config.cjs', '**/dist/**', 'dist', 'build/**', 'node_modules/**'],
-  },
+  { ignores: ['.yarn/**', 'jest.config.cjs', '**/dist/**', 'dist', 'build/**', 'node_modules/**'] },
   ...xylabsConfig,
   {
     rules: {
@@ -37,7 +37,7 @@ export default [
     ...importConfig,
     rules: {
       ...importConfig.rules,
-      'import-x/no-cycle': ['warn', { maxDepth: 5 }]
-    }
-  }
+      'import-x/no-cycle': ['warn', { maxDepth: 5 }],
+    },
+  },
 ]

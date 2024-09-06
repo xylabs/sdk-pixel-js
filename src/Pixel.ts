@@ -1,10 +1,12 @@
 import { assertEx } from '@xylabs/assert'
+import type { JsonObject } from '@xylabs/object'
 import { Mutex } from 'async-mutex'
 import Cookies from 'js-cookie'
 import md5 from 'spark-md5'
 
-import { PixelApi, UserEvent } from './Api/index.js'
-import { ExIds } from './ExIds.js'
+import type { UserEvent } from './Api/index.js'
+import { PixelApi } from './Api/index.js'
+import type { ExIds } from './ExIds.js'
 import { getSystemInfo } from './getSystemInfo.js'
 import { Referrer } from './Referrer.js'
 import { UniqueUserId } from './UniqueUserId.js'
@@ -61,7 +63,7 @@ export class XyPixel {
     }
   }
 
-  async send<T extends Record<string, unknown>>(event: string, fields?: T, eventId?: string) {
+  async send<T extends JsonObject>(event: string, fields?: T, eventId?: string) {
     this.updateFbId()
     const utm = XyPixel.utmFields().update()
     const referrer = new Referrer()

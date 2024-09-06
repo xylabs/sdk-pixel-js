@@ -1,5 +1,5 @@
-import { ExIds } from '../ExIds.js'
-import { UserEventSystem } from './UserEventSystem.js'
+import type { ExIds } from '../ExIds.js'
+import type { UserEventSystem } from './UserEventSystem.js'
 
 export interface UserEvent {
   cid: string
