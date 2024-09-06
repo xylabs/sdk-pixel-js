@@ -1,6 +1,7 @@
 export * from './Api/index.js'
 export * from './FunnelStartedFields.js'
 export * from './Pixel.js'
+export * from './PurchaseFields.ts'
 export * from './Referrer.js'
 export * from './TestStartedFields.js'
 export * from './UniqueUserId.js'
