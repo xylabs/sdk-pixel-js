@@ -1,11 +1,4 @@
 {
-  "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext",
-    "incremental": false
-  },
   "exclude": ["./node_modules", "./**/node_modules", "./dist", "./**/dist", "./**/docs", ".*"],
   "extends": "@xylabs/tsconfig-dom",
 }
